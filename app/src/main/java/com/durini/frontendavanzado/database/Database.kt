@@ -10,35 +10,35 @@ object Database {
 
     private val places  = mutableListOf(
         Place(
-            name = "Rick Sanchez",
+            name = "Bicep",
             status = "Alive",
             species = "Human",
             gender = "Male",
             type = PlaceType.Human
         ),
         Place(
-            name = "Morty Smith",
+            name = "Tricep",
             status = "Alive",
             species = "Human",
             gender = "Male",
             type = PlaceType.Human
         ),
         Place(
-            name = "Summer Smith",
+            name = "Gluteos",
             status = "Alive",
             species = "Human",
             gender = "Female",
             type = PlaceType.Human
         ),
         Place(
-            name = "Beth Smith",
+            name = "Abdominales",
             status = "Alive",
             species = "Human",
             gender = "Female",
             type = PlaceType.Human
         ),
         Place(
-            name = "Jerry Smith",
+            name = "Deltoides",
             status = "Alive",
             species = "Human",
             gender = "Male",
