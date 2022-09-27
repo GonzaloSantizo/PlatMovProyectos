@@ -3,6 +3,7 @@ Repositorio  para el proyecto movil 2022
 
 
 /*-----------------------------------------------------------------------------
+
 Descripcion: 
 
 Este proyecto se enfoca en crear una aplicacion donde las personas puedan 
@@ -17,6 +18,7 @@ ejercicios en si.
 
 
 /*-----------------------------------------------------------------------------
+
 Servicios: 
 
 - El API que sera utilizada en este proyecto es: 
@@ -27,6 +29,7 @@ https://www.programmableweb.com/api/dench-city-bodybuilding-news-rest-api-v200
 
 
 /*-----------------------------------------------------------------------------
+
 Librerias: 
 
 - Jetpack navigation: Se utilizara para la navegacion interna de la aplicacion.
