@@ -17,7 +17,7 @@ Repositorio  para el proyecto movil 2022
 # Servicios: 
 
 ### El API que sera utilizada en este proyecto es: 
-### https://www.programmableweb.com/api/dench-city-bodybuilding-news-rest-api-v200
+### https://twitter.com/makesweat_com
 
 
 
