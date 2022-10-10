@@ -17,7 +17,7 @@ Repositorio  para el proyecto movil 2022
 # Servicios: 
 
 ### El API que sera utilizada en este proyecto es: 
-### https://twitter.com/makesweat_com
+### https://www.programmableweb.com/api/makesweat-rest-api-v10
 
 
 
