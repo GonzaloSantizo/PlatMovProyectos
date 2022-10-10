@@ -2,9 +2,9 @@
 Repositorio  para el proyecto movil 2022
 
 
-alt-H1
+#Descripcion
 
-Este proyecto se enfoca en crear una aplicacion donde las personas puedan 
+##Este proyecto se enfoca en crear una aplicacion donde las personas puedan 
 encontrar informacion centralizada acerca de ejercicios para todos los musculos 
 del cuerpo. Esta aplicacion utilizara informacion de un API para acceder a los
 diferentes ejercicios y proveerle la informacion al usuario. Esta consiste de 
