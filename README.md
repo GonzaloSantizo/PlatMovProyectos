@@ -2,9 +2,7 @@
 Repositorio  para el proyecto movil 2022
 
 
-/*-----------------------------------------------------------------------------
-
-Descripcion: 
+alt-H!
 
 Este proyecto se enfoca en crear una aplicacion donde las personas puedan 
 encontrar informacion centralizada acerca de ejercicios para todos los musculos 
