@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/logInFragment">
+
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.plataformas.proyecto.fragments.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_muscleListFragment"
+            app:destination="@id/muscleListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/muscleListFragment"
+        android:name="com.plataformas.proyecto.fragments.MuscleListFragment"
+        android:label="fragment_muscle_list"
+        tools:layout="@layout/fragment_muscle_list" >
+        <action
+            android:id="@+id/action_muscleListFragment_to_muscleDetailsFragment"
+            app:destination="@id/muscleDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/muscleDetailsFragment"
+        android:name="com.plataformas.proyecto.fragments.MuscleDetailsFragment"
+        android:label="fragment_muscle_details"
+        tools:layout="@layout/fragment_muscle_details" >
+        <action
+            android:id="@+id/action_muscleDetailsFragment_to_muscleListFragment"
+            app:destination="@id/muscleListFragment" />
+    </fragment>
+</navigation>
