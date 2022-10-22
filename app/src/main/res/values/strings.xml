@@ -1,18 +1,10 @@
 <resources>
-    <string name="app_name">Frontend Avanzado</string>
-    <string name="to_home">to home</string>
-    <string name="login_title">Login</string>
-    <string name="home_title">Home</string>
-    <string name="to_details">To Details</string>
-    <string name="details_title">Details</string>
-    <string name="go_to_material_toolbar_activity">Go to Material Toolbar Activity</string>
-    <string name="favs">Favoritos</string>
-    <string name="search">Buscar</string>
-    <string name="sync">Sincronizar</string>
-    <string name="logout">Cerrar sesión</string>
-    <string name="appbar">Appbar</string>
-    <string name="image_loader">Image loader</string>
-    <string name="recyclerview">RecyclerView</string>
-    <string name="load">Cargar</string>
-    <string name="sort">Ordenar</string>
+    <string name="app_name">ProyectoPlataformas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="btnback">btn_back</string>
+    <string name="muscle_group">Muscle Group</string>
 </resources>
