@@ -17,7 +17,7 @@ private lateinit var btnLog:Button
         super.onViewCreated(view, savedInstanceState)
 
         view.apply {
-            btnLog = findViewById(R.id.btnIniciar)
+            btnLog = findViewById(R.id.btn_loginFragment_startSession)
         }
 
 
