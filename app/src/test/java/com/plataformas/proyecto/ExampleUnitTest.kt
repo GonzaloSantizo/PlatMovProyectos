@@ -1,4 +1,4 @@
-package com.fitness.project
+package com.plataformas.proyecto
 
 import org.junit.Test
 

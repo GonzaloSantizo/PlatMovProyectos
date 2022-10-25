@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Project</string>
+    <string name="app_name">ProyectoPlataformas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!-- Log in Text-->
-    <string name="login">Iniciar sesión</string>
-    <string name="password">Contraseña</string>
-    <string name="email">Correo</string>
-    <string name="my_email">arg211024@uvg.edu.gt</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="btnback">btn_back</string>
+    <string name="muscle_group">Muscle Group</string>
 </resources>

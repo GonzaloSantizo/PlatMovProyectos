@@ -1,0 +1,10 @@
+Funcionalidades que se implementarán:
+Un sistema de Log In de usuario
+Un navigation bar donde se pueda cerrar sesión 
+Recyler view para ver la lista de los músculos
+Detalles de los ejercicios del elemento de la lista escogido junto con imágenes
+
+Funcionalidades opcionales:
+Dark mode
+Vídeos de los ejercicios
+Un elemento gráfico con el que el usuario pueda interactuar
