@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_logInFragment_to_muscleListFragment"
             app:destination="@id/muscleListFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/muscleListFragment"
@@ -31,5 +34,14 @@
         <action
             android:id="@+id/action_muscleDetailsFragment_to_muscleListFragment"
             app:destination="@id/muscleListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.plataformas.proyecto.fragments.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
     </fragment>
 </navigation>

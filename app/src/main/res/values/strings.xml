@@ -7,4 +7,7 @@
     <string name="email">Email</string>
     <string name="btnback">btn_back</string>
     <string name="muscle_group">Muscle Group</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="todo">TODO</string>
+    <string name="nombre">Nombre</string>
 </resources>

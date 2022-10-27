@@ -1,7 +1,8 @@
-package com.plataformas.proyecto
+package com.plataformas.proyecto.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.plataformas.proyecto.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
