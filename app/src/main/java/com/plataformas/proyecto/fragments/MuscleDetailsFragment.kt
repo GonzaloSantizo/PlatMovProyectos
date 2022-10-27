@@ -7,26 +7,39 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.appbar.MaterialToolbar
 import com.plataformas.proyecto.R
 
 
 class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
 
     private lateinit var btnBack: Button
+    private lateinit var toolBar:MaterialToolbar
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.apply {
-            btnBack = findViewById(R.id.btnBack)
+            toolBar = findViewById(R.id.materialToolbar_muscleDetailsFragment)
         }
 
+        setToolbar()
         setListeners()
     }
 
+    private fun setToolbar() {
+        val navController = findNavController()
+        val appbarConfig = AppBarConfiguration(navController.graph)
+
+        toolBar.setupWithNavController(navController, appbarConfig)
+    }
+
     private fun setListeners() {
-        btnBack.setOnClickListener {
-            requireView().findNavController().navigate(MuscleDetailsFragmentDirections.actionMuscleDetailsFragmentToMuscleListFragment())
-        }
+//        btnBack.setOnClickListener {
+//            requireView().findNavController().navigate(MuscleDetailsFragmentDirections.actionMuscleDetailsFragmentToMuscleListFragment())
+//        }
     }
 
 }
