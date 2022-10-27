@@ -4,42 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/margin_medium"
-    tools:context=".ui.fragments.LogInFragment">
+    android:padding="10dp"
+    tools:context=".fragments.LogInFragment">
 
     <ImageView
-        android:id="@+id/icon_loginFragment_rickMorty"
-        android:layout_width="388dp"
-        android:layout_height="337dp"
-        android:src="@drawable/images"
-        app:layout_constraintBottom_toTopOf="@id/inputLayout_loginFragment_email"
+        android:id="@+id/img_logInFragment_dumbells"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:contentDescription="imageLogIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintBottom_toTopOf="@id/inputLayout_loginFragment_email"
+        android:src="@drawable/dumbellrack" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout_loginFragment_email"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/margin_xl"
         android:hint="@string/email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icon_loginFragment_rickMorty"
+        app:layout_constraintTop_toBottomOf="@id/img_logInFragment_dumbells"
         app:layout_constraintBottom_toTopOf="@id/inputLayout_loginFragment_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout_loginFragment_password"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_medium"
         android:hint="@string/password"
@@ -47,20 +45,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputLayout_loginFragment_email"
-        app:layout_constraintBottom_toTopOf="@id/button_loginFragment_login"
+        app:layout_constraintBottom_toTopOf="@id/btn_loginFragment_startSession"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textPassword"
             />
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button_loginFragment_login"
-        android:layout_width="0dp"
+        android:id="@+id/btn_loginFragment_startSession"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_large"
         android:text="@string/login"
@@ -68,6 +64,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputLayout_loginFragment_password"
-        app:layout_constraintBottom_toBottomOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
