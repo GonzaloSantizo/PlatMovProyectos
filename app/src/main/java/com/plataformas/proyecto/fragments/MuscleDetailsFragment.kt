@@ -21,19 +21,8 @@ class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.apply {
-            toolBar = findViewById(R.id.materialToolbar_muscleDetailsFragment)
-        }
 
-        setToolbar()
         setListeners()
-    }
-
-    private fun setToolbar() {
-        val navController = findNavController()
-        val appbarConfig = AppBarConfiguration(navController.graph)
-
-        toolBar.setupWithNavController(navController, appbarConfig)
     }
 
     private fun setListeners() {

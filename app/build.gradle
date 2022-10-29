@@ -42,9 +42,11 @@ dependencies {
     def nav_version = "2.5.2"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 
     def coil_version = "2.2.1"
     implementation "io.coil-kt:coil:$coil_version"
+
 
     implementation 'androidx.datastore:datastore-preferences:1.0.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
