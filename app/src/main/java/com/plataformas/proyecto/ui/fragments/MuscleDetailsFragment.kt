@@ -1,4 +1,4 @@
-package com.plataformas.proyecto.fragments
+package com.plataformas.proyecto.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -21,8 +21,17 @@ class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        view.apply {
+            toolBar = findViewById(R.id.toolbar_muscleDetails)
+        }
+        setToolbar()
         setListeners()
+    }
+
+    private fun setToolbar() {
+        val navController = findNavController()
+        val appbarConfig = AppBarConfiguration(navController.graph)
+        toolBar.setupWithNavController(navController, appbarConfig)
     }
 
     private fun setListeners() {

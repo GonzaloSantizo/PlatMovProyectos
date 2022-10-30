@@ -1,6 +1,7 @@
-package com.plataformas.proyecto.fragments
+package com.plataformas.proyecto.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,21 +11,22 @@ import androidx.navigation.findNavController
 import com.plataformas.proyecto.R
 
 
-class MuscleListFragment : Fragment(R.layout.fragment_muscle_list) {
-
-private lateinit var btnToDetails : Button
-
+class LogInFragment : Fragment(R.layout.fragment_log_in) {
+private lateinit var btnLog:Button
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    view.apply {
-        btnToDetails = findViewById(R.id.btnList)
-    }
+
+        view.apply {
+            btnLog = findViewById(R.id.btn_loginFragment_startSession)
+        }
+
+
         setListeners()
     }
 
     private fun setListeners() {
-        btnToDetails.setOnClickListener {
-            requireView().findNavController().navigate(MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment())
+        btnLog.setOnClickListener {
+            requireView().findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToMuscleListFragment())
         }
     }
 
