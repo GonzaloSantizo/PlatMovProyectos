@@ -2,34 +2,34 @@ package com.plataformas.proyecto.dataSource.model
 
 data class Muscles(
     val name: String,
-    val exersises: String
+    val exercises: String
 )
 
 object MuscleGroupsDB{
     private val muscles = mutableListOf(
         Muscles(
             name = "Espalda",
-            exersises = "Pull ups"
+            exercises = "Pull ups"
         ),
         Muscles(
             name = "Pectoral",
-            exersises = "Press banca"
+            exercises = "Press banca"
         ),
         Muscles(
             name  = "Cuadriceps",
-            exersises = "Sentadilla bulgara"
+            exercises = "Sentadilla bulgara"
         ),
         Muscles(
             name = "Isquiosurales",
-            exersises = "Curl isquiosurales"
+            exercises = "Curl isquiosurales"
         ),
         Muscles(
             name = "Bicep",
-            exersises ="Curl con barra recta"
+            exercises ="Curl con barra recta"
         ),
         Muscles(
            name = "Tricep",
-           exersises = "Jalon con polea"
+            exercises = "Jalon con polea"
         )
     )
     fun getMuscles() = muscles
