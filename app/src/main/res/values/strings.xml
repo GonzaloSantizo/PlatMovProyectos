@@ -10,4 +10,9 @@
     <string name="password">Contraseña</string>
     <string name="email">Correo</string>
     <string name="my_email">arg211024@uvg.edu.gt</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="nombre">Nombre</string>
+    <string name="imagelogin">imageLogIn</string>
+    <string name="no_tienes_cuenta_registrate_aqu">¿No tienes cuenta? ¡Registrate aquí!</string>
+    <string name="todo">TODO</string>
 </resources>

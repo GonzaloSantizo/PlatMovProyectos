@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".ui.fragments.LogInFragment">
+    tools:context="ui.fragments.LogInFragment">
 
     <ImageView
         android:id="@+id/img_logInFragment_dumbells"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
-        android:contentDescription="imageLogIn"
+        android:contentDescription="@string/imagelogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -45,17 +45,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputLayout_loginFragment_email"
-        app:layout_constraintBottom_toTopOf="@id/btn_loginFragment_startSession"
+        app:layout_constraintBottom_toTopOf="@id/btnIniciar"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textPassword"
             />
+
+        <TextView
+            android:id="@+id/textViewRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp"
+            android:text="@string/no_tienes_cuenta_registrate_aqu"
+            android:textColor="#304FFE" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_loginFragment_startSession"
+        android:id="@+id/btnIniciar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_large"
@@ -65,4 +75,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputLayout_loginFragment_password"
         />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
