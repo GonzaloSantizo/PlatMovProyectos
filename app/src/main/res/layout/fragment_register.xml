@@ -74,7 +74,7 @@
         android:id="@+id/textView"
         android:layout_width="301dp"
         android:layout_height="58dp"
-        android:text="¡El primer paso para una vida saludable!"
+        android:text="@string/el_primer_paso_para_una_vida_saludable"
         android:textColor="#100F0F"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
