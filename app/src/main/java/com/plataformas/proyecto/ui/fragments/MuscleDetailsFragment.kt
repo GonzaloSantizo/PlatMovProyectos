@@ -35,9 +35,9 @@ class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
     }
 
     private fun setListeners() {
-//        btnBack.setOnClickListener {
-//            requireView().findNavController().navigate(MuscleDetailsFragmentDirections.actionMuscleDetailsFragmentToMuscleListFragment())
-//        }
+    btnBack.setOnClickListener {
+            requireView().findNavController().navigate(MuscleDetailsFragmentDirections.actionMuscleDetailsFragmentToMuscleListFragment())
+        }
     }
 
 }

@@ -37,7 +37,11 @@
         android:id="@+id/muscleDetailsFragment"
         android:name="com.plataformas.proyecto.ui.fragments.MuscleDetailsFragment"
         android:label="Detalles de musculo"
-        tools:layout="@layout/fragment_muscle_details" />
+        tools:layout="@layout/fragment_muscle_details" >
+        <action
+            android:id="@+id/action_muscleDetailsFragment_to_muscleListFragment"
+            app:destination="@id/muscleListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.plataformas.proyecto.ui.fragments.RegisterFragment"

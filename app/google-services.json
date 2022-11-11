@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "733307722314",
+    "firebase_url": "https://proyectoplatmov-default-rtdb.firebaseio.com",
+    "project_id": "proyectoplatmov",
+    "storage_bucket": "proyectoplatmov.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733307722314:android:182f251f08cf427ce1a4b3",
+        "android_client_info": {
+          "package_name": "com.plataformas.proyecto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733307722314-4u433ljiq78q0vb4nfep76099p7qmgki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChy6ouSp-bOdD7vd_YTyTRJd6W0hd4E54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733307722314-4u433ljiq78q0vb4nfep76099p7qmgki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
