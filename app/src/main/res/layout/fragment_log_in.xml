@@ -15,11 +15,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/inputLayout_loginFragment_email"
+        app:layout_constraintBottom_toTopOf="@id/inputEmail_layout"
         android:src="@drawable/dumbellrack" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout_loginFragment_email"
+        android:id="@+id/inputEmail_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_xl"
@@ -27,16 +27,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_logInFragment_dumbells"
-        app:layout_constraintBottom_toTopOf="@id/inputLayout_loginFragment_password"
+        app:layout_constraintBottom_toTopOf="@id/inputPassword_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputEmail"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout_loginFragment_password"
+        android:id="@+id/inputPassword_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_medium"
@@ -44,7 +45,7 @@
         app:passwordToggleEnabled="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputLayout_loginFragment_email"
+        app:layout_constraintTop_toBottomOf="@id/inputEmail_layout"
         app:layout_constraintBottom_toTopOf="@id/btnIniciar"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
@@ -73,7 +74,7 @@
         android:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputLayout_loginFragment_password"
+        app:layout_constraintTop_toBottomOf="@id/inputPassword_layout"
         />
 
 
