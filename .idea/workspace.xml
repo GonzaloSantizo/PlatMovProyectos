@@ -13,11 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e03af9fb-a3ad-4a3c-942c-21251e614be2" name="Changes" comment="Creación de clases de api, repositorio y firestore">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/data/remote/firestore/Excercises.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/data/remote/firestore/Muscles.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/ui/adapters/MuscleAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/data/remote/firestore/Excercises.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/data/remote/firestore/ExercisesDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/data/remote/firestore/Muscles.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/data/remote/firestore/MusclesDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/ui/adapters/MuscleAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/ui/adapters/MuscleAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycler_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_item.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,6 +1,6 @@
 package com.plataformas.proyecto.data.remote.firestore
 
-data class Excercises(
-    var excercises: String ?= null,
+data class ExercisesDto(
+    var excercise: String ?= null,
     var description: String ?= null,
     var image : String ?= null )
