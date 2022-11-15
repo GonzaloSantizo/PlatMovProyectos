@@ -57,6 +57,7 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list) {
                 R.id.menu_item_logout -> {
                     //logout()
                     true
+
                 }
                 else -> true
             }
