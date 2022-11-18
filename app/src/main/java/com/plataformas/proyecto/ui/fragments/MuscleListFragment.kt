@@ -20,13 +20,11 @@ import kotlinx.coroutines.launch
 
 class MuscleListFragment : Fragment(R.layout.fragment_muscle_list) {
     private lateinit var toolbar: MaterialToolbar
-    private lateinit var btnToDetails : Button
     private lateinit var recyclerMuscles:RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.apply {
-            btnToDetails = findViewById(R.id.btnList)
         }
         // Initialazing components, see fragment_muscle_list
         toolbar = view.findViewById(R.id.toolbar_muscleList)
@@ -45,9 +43,6 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list) {
     }
 
     private fun setListeners() {
-        btnToDetails.setOnClickListener {
-            requireView().findNavController().navigate(MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment())
-        }
         toolbar.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId) {
                 R.id.menu_item_darkMode -> {
