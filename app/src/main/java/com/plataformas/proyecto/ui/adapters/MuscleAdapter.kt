@@ -11,56 +11,57 @@ import coil.load
 import coil.request.CachePolicy
 import coil.transform.CircleCropTransformation
 import com.plataformas.proyecto.R
-import com.plataformas.proyecto.data.remote.firestore.ExercisesDto
-import com.plataformas.proyecto.data.remote.firestore.MusclesDto
+import com.plataformas.proyecto.data.remote.firestore.Exercises
 
-/**
- * This class it's use to put the data on the screen.
- */
 class MuscleAdapter(
-    private val dataSet : MutableList<ExercisesDto>,
+    private val dataSet: MutableList<Exercises>,
     private val listener: RecyclerViewMuscleEvents
-    ) : RecyclerView.Adapter<MuscleAdapter.MyViewHolder>() {
+) : RecyclerView.Adapter<MuscleAdapter.ViewHolder>() {
 
-
-    public class MyViewHolder(
+    class ViewHolder(
         private val view: View,
         private val listener: RecyclerViewMuscleEvents
-    ) : RecyclerView.ViewHolder(view){
-        private val layoutCharacter: ConstraintLayout = view.findViewById(R.id.constraintLayout_muscleShows)
-        private val muscleName: TextView = view.findViewById(R.id.recycler_muscleName)
-        private val imageExercise: ImageView = view.findViewById(R.id.recycler_itemImage)
+    ) : RecyclerView.ViewHolder(view) {
 
-        val exercise : TextView = itemView.findViewById(R.id.recycler_muscleName)
-        val muscleImage : ImageView = itemView.findViewById(R.id.recycler_itemImage)
-        fun setData(muscle: ExercisesDto) {
-            muscle.apply {
-                muscleName.text = muscleName.toString()
+        private val layoutMuscles: ConstraintLayout = view.findViewById(R.id.constraint_item)
+        private val imageMuscle: ImageView = view.findViewById(R.id.recycler_itemImage)
+        private val muscleName: TextView = view.findViewById(R.id.item_muscleGroup)
+
+        fun setData(exercises: Exercises) {
+            exercises.apply {
+                imageMuscle.load(exercises.image) {
+                    placeholder(androidx.appcompat.R.drawable.abc_btn_radio_material_anim)
+                    transformations(CircleCropTransformation())
+                    error(androidx.appcompat.R.drawable.abc_btn_borderless_material)
+                    memoryCachePolicy(CachePolicy.ENABLED)
+                    diskCachePolicy(CachePolicy.READ_ONLY)
+                }
+                muscleName.text = name
+
             }
-            layoutCharacter.setOnClickListener {
-                listener.onItemClicked(muscle)
+            layoutMuscles.setOnClickListener {
+                listener.onItemClicked(exercises)
             }
         }
+
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+
+    interface RecyclerViewMuscleEvents {
+        fun onItemClicked(exercises: Exercises)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_item, parent, false)
 
-        return MyViewHolder(view, listener)
+        return ViewHolder(view, listener)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setData(dataSet[position])
-
     }
 
-    override fun getItemCount() = dataSet.size
-
-    /**
-     * Interfaz useful to the function of each muscle group, is like a card view
-     */
-    interface RecyclerViewMuscleEvents {
-        fun onItemClicked(muscle: ExercisesDto)
-    }
+    override fun getItemCount() : Int =
+         dataSet.size
 
 }

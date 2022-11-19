@@ -16,10 +16,6 @@
     <string name="no_tienes_cuenta_registrate_aqu">¿No tienes cuenta? ¡Registrate aquí!</string>
     <string name="todo">TODO</string>
     <string name="el_primer_paso_para_una_vida_saludable">¡El primer paso para una vida saludable!</string>
-
-    <!-- recycler Text-->
-    <string name="muscle">Muscle Group</string>
-    <string name="exercise">Exercise</string>
-
-
+    <string name="dark_mode">Dark Mode</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
 </resources>

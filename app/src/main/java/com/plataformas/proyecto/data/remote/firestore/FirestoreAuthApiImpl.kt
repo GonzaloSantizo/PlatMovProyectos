@@ -25,4 +25,21 @@ class FirestoreAuthApiImpl(
             Resource.Error(message = "User not found")
         }
     }
+
+    override suspend fun createUserWithEmailAndPassword(
+        email: String,
+        password: String,
+    ): Resource<String> {
+        return try {
+            val response = api.createUserWithEmailAndPassword(email, password).await()
+
+            val user = response.user
+            if (user != null)
+                Resource.Success(data = user.uid)
+            else
+                Resource.Error(message = "Failed to create")
+        } catch (e: Exception) {
+            Resource.Error(message = "User not found")
+        }
+    }
 }

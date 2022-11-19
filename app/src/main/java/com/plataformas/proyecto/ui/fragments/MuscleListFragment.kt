@@ -2,41 +2,40 @@ package com.plataformas.proyecto.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
 import com.plataformas.proyecto.R
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.plataformas.proyecto.data.remote.firestore.Exercises
+import com.plataformas.proyecto.ui.adapters.MuscleAdapter
 
 
-class MuscleListFragment : Fragment(R.layout.fragment_muscle_list) {
+class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapter.RecyclerViewMuscleEvents {
     private lateinit var toolbar: MaterialToolbar
-    private lateinit var btnToDetails : Button
     private lateinit var recyclerMuscles:RecyclerView
+    private lateinit var adapter: MuscleAdapter
+
+    private val exercises: MutableList<Exercises> = mutableListOf()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.apply {
-            btnToDetails = findViewById(R.id.btnList)
         }
-        // Initialazing components, see fragment_muscle_list
+        // Initializing components, see fragment_muscle_list
         toolbar = view.findViewById(R.id.toolbar_muscleList)
         recyclerMuscles = view.findViewById(R.id.recycler_muscles)
         setToolBar()
         setListeners()
+        setupRecycler()
     }
 
     /*
-        Setting the toolbar to show the neccesary data to the fragent
+        Setting the toolbar to show the necessary data to the fragment
      */
     private fun setToolBar(){
         val navController = findNavController()
@@ -45,9 +44,6 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list) {
     }
 
     private fun setListeners() {
-        btnToDetails.setOnClickListener {
-            requireView().findNavController().navigate(MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment())
-        }
         toolbar.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId) {
                 R.id.menu_item_darkMode -> {
@@ -57,24 +53,23 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list) {
                 R.id.menu_item_logout -> {
                     //logout()
                     true
+
                 }
                 else -> true
             }
         }
     }
+    private fun setupRecycler() {
+        adapter = MuscleAdapter(this.exercises, this)
+        recyclerMuscles.layoutManager = LinearLayoutManager(requireContext())
+        recyclerMuscles.setHasFixedSize(true)
+        recyclerMuscles.adapter = adapter
+    }
 
-//    override fun onItemClicked(){
-//
-//    }
-//    private fun logout() {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            requireContext().dataStore.removePreferencesValue(KEY_MAIL)
-//            CoroutineScope(Dispatchers.Main).launch {
-//                requireView().findNavController().navigate(
-//                    CharacterListFragmentDirections.actionCharacterListFragmentToLoginFragment()
-//                )
-//            }
-//        }
-//    }
+    override fun onItemClicked(exercises: Exercises) {
+       val action = MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment()
+        requireView().findNavController().navigate(action)
+    }
+
 
 }

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.MuscleListFragment">
+    tools:context=".ui.fragments.MuscleListFragment"
+    android:id="@+id/constraint_recycler"
+    >
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar_muscleList"
@@ -18,21 +20,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_muscles"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_muscleList"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/recycler_item"
-        />
-    <Button
-        android:id="@+id/btnList"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List to details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recycler_muscles"
-        app:layout_constraintVertical_bias="0.821" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_muscleList"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/recycler_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
