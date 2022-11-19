@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/txtView_Message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,22 +20,31 @@
         tools:ignore="ImageContrastCheck"
         tools:src="@tools:sample/avatars" />
 
+    <TextView
+        android:id="@+id/txtView_Message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/el_primer_paso_para_una_vida_saludable"
+        android:textColor="#100F0F"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/emailRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.5" />
+
     <com.google.android.material.textfield.TextInputLayout
-<<<<<<< HEAD
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/emailRegister"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-=======
-        android:id="@+id/emailRegister"
-        android:layout_width="0dp"
->>>>>>> 8ea10ee467efda1299212aa3fede4b990246e5ec
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/passwordRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/txtView_Message">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -47,14 +56,9 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-<<<<<<< HEAD
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/passwordRegister"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-=======
-        android:id="@+id/passwordRegister"
-        android:layout_width="409dp"
->>>>>>> 8ea10ee467efda1299212aa3fede4b990246e5ec
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
@@ -62,12 +66,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnRegistrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-=======
         app:layout_constraintTop_toBottomOf="@+id/emailRegister"
         app:layout_constraintVertical_bias="0.305"
->>>>>>> 8ea10ee467efda1299212aa3fede4b990246e5ec
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -86,43 +86,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
-        app:layout_constraintVertical_bias="0.5" />
-=======
-        app:layout_constraintTop_toBottomOf="@+id/passwordRegister" />
->>>>>>> 8ea10ee467efda1299212aa3fede4b990246e5ec
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/el_primer_paso_para_una_vida_saludable"
-        android:textColor="#100F0F"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/emailRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegister"
         app:layout_constraintVertical_bias="0.5" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageView2,textView" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageView2,textView" />
-
-    <androidx.constraintlayout.helper.widget.Layer
-        android:id="@+id/layer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="imageView2,textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
