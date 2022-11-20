@@ -48,7 +48,6 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         setToolBar()
 
         setListeners()
-        setupRecycler()
         EventChangeListner()
     }
 
@@ -66,18 +65,19 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
                             exercisesArrayList.add(dc.document.toObject(ExercisesDto::class.java))
                         }
                     }
+                    setupRecycler(exercisesArrayList)
                     adapter.notifyDataSetChanged()
-                }
 
+                }
             })
     }
     /*
         Setting the toolbar to show the necessary data to the fragment
      */
-    private fun setupRecycler() {
+    private fun setupRecycler(exercise: ArrayList<ExercisesDto>) {
+        adapter = MuscleAdapter(exercisesArrayList, this)
         recyclerMuscles.layoutManager = LinearLayoutManager(requireContext())
         recyclerMuscles.setHasFixedSize(true)
-        adapter = MuscleAdapter(this.exercisesArrayList, this)
         recyclerMuscles.adapter = adapter
 
     }
@@ -116,16 +116,10 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
     }
 
     override fun onItemClicked(exercise: ExercisesDto) {
-        val bundle = Bundle()
-        bundle.putString("muscle",exercise.muscle)
-        bundle.putString("exercise", exercise.name)
-        bundle.putString("description", exercise.description)
-        bundle.putString("image",exercise.image)
-        // Transfering to the second fragment
-        val fragment = MuscleDetailsFragment()
-        fragment.arguments = bundle
-        fragmentManager?.beginTransaction()?.replace(R.id.nav_graph,fragment)?.commit()
-
+        val action = MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment(
+            exercise.name.toString()
+        )
+        requireView().findNavController().navigate(action)
     }
 }
 

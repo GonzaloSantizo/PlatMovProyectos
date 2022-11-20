@@ -19,18 +19,25 @@ class MuscleAdapter(
     private val listener : RecyclerViewExerciseEvents
 ) : RecyclerView.Adapter<MuscleAdapter.ViewHolder>() {
 
-    public class ViewHolder(view: View, private val listener: RecyclerViewExerciseEvents): RecyclerView.ViewHolder(view){
-        private val layoutExercise : ConstraintLayout = view.findViewById(R.id.constraint_item)
-        val muscle : TextView = view.findViewById(R.id.txtView_Adapter_item_muscleGroup)
-        val exercises: TextView = view.findViewById(R.id.txtView_Adapter_exercise_name)
-        val image : ImageView = view.findViewById(R.id.recycler_itemImage)
 
-        fun setData(exercise : ExercisesDto){
-            layoutExercise.setOnClickListener {
+    inner class ViewHolder(view: View, private val listener: RecyclerViewExerciseEvents): RecyclerView.ViewHolder(view){
+        private val layoutExercise : ConstraintLayout = view.findViewById(R.id.constraint_item)
+        var muscle : TextView = view.findViewById(R.id.txtView_Adapter_item_muscleGroup)
+        var exercises: TextView = view.findViewById(R.id.txtView_Adapter_exercise_name)
+        var image : ImageView = view.findViewById(R.id.recycler_itemImage)
+
+        fun setData(exercise: ExercisesDto){
+            image.load(exercise.image){
+                transformations(CircleCropTransformation())
+                memoryCachePolicy(CachePolicy.ENABLED)
+                diskCachePolicy(CachePolicy.READ_ONLY)
+            }
+            muscle.text = exercise.muscle
+            exercises.text = exercise.name
+            layoutExercise.setOnClickListener{
                 listener.onItemClicked(exercise)
             }
         }
-
     }
 
     interface RecyclerViewExerciseEvents {
@@ -43,14 +50,7 @@ class MuscleAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val exercise : ExercisesDto = muscleList[position]
-        holder.muscle.text = exercise.muscle
-        holder.exercises.text = exercise.name
-        holder.image.load(exercise.image){
-            transformations(CircleCropTransformation())
-            memoryCachePolicy(CachePolicy.ENABLED)
-            diskCachePolicy(CachePolicy.READ_ONLY)
-        }
+        holder.setData(muscleList[position])
     }
 
     override fun getItemCount(): Int = muscleList.size

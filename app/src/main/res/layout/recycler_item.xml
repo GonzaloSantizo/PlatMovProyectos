@@ -14,7 +14,6 @@
         android:layout_width="@dimen/list_item_image_size"
         android:layout_height="@dimen/list_item_with_image_height"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/txtView_Adapter_item_muscleGroup"
         app:layout_constraintStart_toStartOf="parent"
