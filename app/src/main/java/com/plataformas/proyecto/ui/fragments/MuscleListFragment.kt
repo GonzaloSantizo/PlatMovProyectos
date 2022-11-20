@@ -116,14 +116,11 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
     }
 
     override fun onItemClicked(exercise: ExercisesDto) {
+        db = FirebaseFirestore.getInstance()
+
         val action = MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment(
             exercise.name.toString()
         )
         requireView().findNavController().navigate(action)
     }
 }
-
-
-
-
-

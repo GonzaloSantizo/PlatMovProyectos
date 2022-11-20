@@ -57,7 +57,8 @@ class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
 
     private fun getCharacter() {
         db = FirebaseFirestore.getInstance()
-        db.collection("dbmuscles").document(args.name).get().addOnSuccessListener {
+        db.collection("dbmuscles").document(
+                args.name).get().addOnSuccessListener {
             if (it.exists()) {
                 txtMuscle.text = it.data?.get("muscle").toString()
                 txtDescription.text = it.data?.get("description").toString()
