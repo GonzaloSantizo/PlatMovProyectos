@@ -11,18 +11,15 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
-<<<<<<< HEAD
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.QuerySnapshot
-=======
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.*
 import com.google.firebase.ktx.Firebase
->>>>>>> 88664c2cb664145ef67953e5c3e3b04e20977ab0
 import com.plataformas.proyecto.R
 import com.plataformas.proyecto.data.remote.firestore.ExercisesDto
 import com.plataformas.proyecto.ui.adapters.MuscleAdapter
@@ -30,20 +27,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
-<<<<<<< HEAD
 class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapter.RecyclerViewExerciseEvents{
-=======
-
-class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapter.RecyclerViewMuscleEvents {
->>>>>>> 88664c2cb664145ef67953e5c3e3b04e20977ab0
     private lateinit var toolbar: MaterialToolbar
     private lateinit var recyclerMuscles:RecyclerView
-
     private lateinit var adapter: MuscleAdapter
-<<<<<<< HEAD
     private lateinit var db: FirebaseFirestore
     private lateinit var exercisesArrayList : ArrayList<ExercisesDto>
+    private lateinit var auth : FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -51,7 +41,7 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         // Initializing components, see fragment_muscle_list
         toolbar = view.findViewById(R.id.toolbar_muscleList)
         recyclerMuscles = view.findViewById(R.id.recycler_muscles)
-
+        auth= Firebase.auth
         exercisesArrayList = arrayListOf()
 
         setToolBar()
@@ -59,36 +49,7 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         setListeners()
         setupRecycler()
         EventChangeListner()
-=======
-
-    private lateinit var db : FirebaseFirestore
-    private lateinit var auth : FirebaseAuth
-
-//    val collectionReference : CollectionReference = db.collection("dbmuscles")
-
-
-    private var exerciseList: ArrayList<Exercises> = arrayListOf()
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        db= FirebaseFirestore.getInstance()
-        auth= Firebase.auth
-
-
-        view.apply {
-
-            // Initializing components, see fragment_muscle_list
-            toolbar = findViewById(R.id.toolbar_muscleList)
-            recyclerMuscles = findViewById(R.id.recycler_muscles)
-            setToolBar()
-            setListeners()
-            setupRecycler()
-        }
-
-
->>>>>>> 88664c2cb664145ef67953e5c3e3b04e20977ab0
     }
-
 
     private fun EventChangeListner(){
         db = FirebaseFirestore.getInstance()
@@ -113,11 +74,9 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         Setting the toolbar to show the necessary data to the fragment
      */
     private fun setupRecycler() {
-
         recyclerMuscles.layoutManager = LinearLayoutManager(requireContext())
         recyclerMuscles.setHasFixedSize(true)
-
-        adapter = MuscleAdapter(this.exerciseList, this)
+        adapter = MuscleAdapter(this.exercisesArrayList)
         recyclerMuscles.adapter = adapter
 
     }
@@ -145,21 +104,6 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         }
     }
 
-<<<<<<< HEAD
-    private fun setupRecycler() {
-        adapter = MuscleAdapter(this.exercisesArrayList)
-        recyclerMuscles.layoutManager = LinearLayoutManager(requireContext())
-        recyclerMuscles.setHasFixedSize(true)
-        recyclerMuscles.adapter = adapter
-    }
-=======
->>>>>>> 88664c2cb664145ef67953e5c3e3b04e20977ab0
-
-    override fun onItemClicked(exercises: ExercisesDto) {
-       val action = MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment()
-        requireView().findNavController().navigate(action)
-    }
-
     private fun logout() {
         CoroutineScope(Dispatchers.IO).launch {
             CoroutineScope(Dispatchers.Main).launch {
@@ -170,8 +114,10 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         }
     }
 
-
-
+    override fun onItemClicked(character: Character) {
+        val action = MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment()
+        requireView().findNavController().navigate(action)
+    }
 }
 
 
