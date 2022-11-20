@@ -12,15 +12,18 @@
         android:id="@+id/toolbar_muscleList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu"
-        />
+        app:layout_constraintVertical_bias="0.0"
+        app:menu="@menu/menu" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_muscles"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

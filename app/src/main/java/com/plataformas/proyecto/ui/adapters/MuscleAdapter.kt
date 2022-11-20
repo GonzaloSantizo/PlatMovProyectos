@@ -24,9 +24,33 @@ class MuscleAdapter(
         private val view: View,
     ) : RecyclerView.ViewHolder(view) {
 
+<<<<<<< HEAD
         val exercise : TextView = view.findViewById(R.id.txtView_Adapter_exercise_name)
         val imageMuscle: ImageView = view.findViewById(R.id.recycler_itemImage)
         val muscleName: TextView = view.findViewById(R.id.txtView_Adapter_item_muscleGroup)
+=======
+        private val layoutMuscles: ConstraintLayout = view.findViewById(R.id.constraint_item)
+        private val imageExercises: ImageView = view.findViewById(R.id.recycler_itemImage)
+        private val textName: TextView = view.findViewById(R.id.item_muscleGroup)
+
+        fun setData(exercises: Exercises) {
+            exercises.apply {
+                imageExercises.load(exercises.image) {
+                 //   placeholder(android.R.drawable.ic_menu_rotate)
+                    transformations(CircleCropTransformation())
+                //    error(android.R.drawable.btn_dialog)
+                    memoryCachePolicy(CachePolicy.ENABLED)
+                    diskCachePolicy(CachePolicy.READ_ONLY)
+                }
+                textName.text = name
+
+            }
+            layoutMuscles.setOnClickListener {
+                listener.onItemClicked(exercises)
+            }
+        }
+
+>>>>>>> 88664c2cb664145ef67953e5c3e3b04e20977ab0
     }
 
     interface RecyclerViewExerciseEvents {
@@ -51,6 +75,10 @@ class MuscleAdapter(
         }
     }
 
+<<<<<<< HEAD
     override fun getItemCount() : Int = muscleList.size
+=======
+    override fun getItemCount() = dataSet.size
+>>>>>>> 88664c2cb664145ef67953e5c3e3b04e20977ab0
 
 }
