@@ -24,19 +24,19 @@ class MuscleAdapter(
     ) : RecyclerView.ViewHolder(view) {
 
         private val layoutMuscles: ConstraintLayout = view.findViewById(R.id.constraint_item)
-        private val imageMuscle: ImageView = view.findViewById(R.id.recycler_itemImage)
-        private val muscleName: TextView = view.findViewById(R.id.item_muscleGroup)
+        private val imageExercises: ImageView = view.findViewById(R.id.recycler_itemImage)
+        private val textName: TextView = view.findViewById(R.id.item_muscleGroup)
 
         fun setData(exercises: Exercises) {
             exercises.apply {
-                imageMuscle.load(exercises.image) {
-                    placeholder(androidx.appcompat.R.drawable.abc_btn_radio_material_anim)
+                imageExercises.load(exercises.image) {
+                 //   placeholder(android.R.drawable.ic_menu_rotate)
                     transformations(CircleCropTransformation())
-                    error(androidx.appcompat.R.drawable.abc_btn_borderless_material)
+                //    error(android.R.drawable.btn_dialog)
                     memoryCachePolicy(CachePolicy.ENABLED)
                     diskCachePolicy(CachePolicy.READ_ONLY)
                 }
-                muscleName.text = name
+                textName.text = name
 
             }
             layoutMuscles.setOnClickListener {
@@ -61,7 +61,6 @@ class MuscleAdapter(
         holder.setData(dataSet[position])
     }
 
-    override fun getItemCount() : Int =
-         dataSet.size
+    override fun getItemCount() = dataSet.size
 
 }
