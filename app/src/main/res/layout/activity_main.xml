@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEFEFE"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -12,20 +13,29 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu"
-        />
+        app:menu="@menu/menu" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_log_in"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph"
-        />
+        tools:layout="@layout/fragment_log_in" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavi_bottomNavActivity"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation"
+        style="@style/BottomNavigation"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

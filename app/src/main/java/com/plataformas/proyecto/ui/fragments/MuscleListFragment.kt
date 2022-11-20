@@ -17,6 +17,9 @@ import com.google.firebase.ktx.Firebase
 import com.plataformas.proyecto.R
 import com.plataformas.proyecto.data.remote.firestore.Exercises
 import com.plataformas.proyecto.ui.adapters.MuscleAdapter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 
@@ -81,7 +84,7 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
                 }
 
                 R.id.menu_item_logout -> {
-                    //logout()
+                    logout()
                     true
 
                 }
@@ -96,6 +99,15 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         requireView().findNavController().navigate(action)
     }
 
+    private fun logout() {
+        CoroutineScope(Dispatchers.IO).launch {
+            CoroutineScope(Dispatchers.Main).launch {
+                requireView().findNavController().navigate(
+                    MuscleListFragmentDirections.actionMuscleListFragmentToLogInFragment()
+                )
+            }
+        }
+    }
 
 
 

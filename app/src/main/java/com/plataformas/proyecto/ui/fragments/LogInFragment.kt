@@ -40,13 +40,10 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
             inputPassword= findViewById(R.id.inputPassword_layout)
 
         }
-
-
         setListeners()
     }
 
     private fun setListeners() {
-
         btnLog.setOnClickListener {
             val email = inputEmail.editText!!.text.toString()
             val password = inputPassword.editText!!.text.toString()
@@ -59,8 +56,6 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
                         "Log In exitoso",
                         Toast.LENGTH_LONG).show()
                     requireView().findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToMuscleListFragment())
-
-
                 }
                 else {
                     Toast.makeText(context,
@@ -69,14 +64,9 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
                         ).show()
                 }
             }
-
-
-
         }
         textViewRegistro.setOnClickListener{
             requireView().findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToRegisterFragment())
         }
     }
-
-
 }
