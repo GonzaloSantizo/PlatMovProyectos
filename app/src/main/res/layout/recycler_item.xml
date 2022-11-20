@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint_item"
     android:layout_width="match_parent"
+    android:padding="@dimen/margin_small"
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true">
 
     <ImageView
         android:id="@+id/recycler_itemImage"
-        android:layout_width="65dp"
-        android:layout_height="54dp"
+        android:layout_width="@dimen/list_item_image_size"
+        android:layout_height="@dimen/list_item_with_image_height"
+        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintEnd_toStartOf="@id/txtView_Adapter_item_muscleGroup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
         tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -26,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/muscle_group"
+        android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@+id/recycler_itemImage"
         app:layout_constraintTop_toTopOf="@+id/recycler_itemImage"
         app:layout_constraintBottom_toBottomOf="@+id/recycler_itemImage"/>
