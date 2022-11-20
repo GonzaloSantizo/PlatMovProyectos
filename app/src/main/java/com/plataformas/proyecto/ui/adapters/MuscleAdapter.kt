@@ -15,22 +15,31 @@ import com.plataformas.proyecto.data.remote.firestore.ExercisesDto
 import org.w3c.dom.Text
 
 class MuscleAdapter(
-    private val muscleList: ArrayList<ExercisesDto>
+    private val muscleList: ArrayList<ExercisesDto>,
+    private val listener : RecyclerViewExerciseEvents
 ) : RecyclerView.Adapter<MuscleAdapter.ViewHolder>() {
 
-    public class ViewHolder(view: View): RecyclerView.ViewHolder(view){
+    public class ViewHolder(view: View, private val listener: RecyclerViewExerciseEvents): RecyclerView.ViewHolder(view){
+        private val layoutExercise : ConstraintLayout = view.findViewById(R.id.constraint_item)
         val muscle : TextView = view.findViewById(R.id.txtView_Adapter_item_muscleGroup)
         val exercises: TextView = view.findViewById(R.id.txtView_Adapter_exercise_name)
         val image : ImageView = view.findViewById(R.id.recycler_itemImage)
+
+        fun setData(exercise : ExercisesDto){
+            layoutExercise.setOnClickListener {
+                listener.onItemClicked(exercise)
+            }
+        }
+
     }
 
     interface RecyclerViewExerciseEvents {
-        fun onItemClicked(character: Character)
+        fun onItemClicked(exercise: ExercisesDto)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.recycler_item, parent,false)
-        return ViewHolder(itemView)
+        return ViewHolder(itemView, listener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

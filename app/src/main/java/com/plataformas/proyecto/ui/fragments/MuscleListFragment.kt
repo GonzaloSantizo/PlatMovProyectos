@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -18,7 +19,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.*
 import com.google.firebase.ktx.Firebase
 import com.plataformas.proyecto.R
 import com.plataformas.proyecto.data.remote.firestore.ExercisesDto
@@ -33,6 +33,7 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
     private lateinit var adapter: MuscleAdapter
     private lateinit var db: FirebaseFirestore
     private lateinit var exercisesArrayList : ArrayList<ExercisesDto>
+    private lateinit var description : TextView
     private lateinit var auth : FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -76,7 +77,7 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
     private fun setupRecycler() {
         recyclerMuscles.layoutManager = LinearLayoutManager(requireContext())
         recyclerMuscles.setHasFixedSize(true)
-        adapter = MuscleAdapter(this.exercisesArrayList)
+        adapter = MuscleAdapter(this.exercisesArrayList, this)
         recyclerMuscles.adapter = adapter
 
     }
@@ -114,9 +115,17 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         }
     }
 
-    override fun onItemClicked(character: Character) {
-        val action = MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment()
-        requireView().findNavController().navigate(action)
+    override fun onItemClicked(exercise: ExercisesDto) {
+        val bundle = Bundle()
+        bundle.putString("muscle",exercise.muscle)
+        bundle.putString("exercise", exercise.name)
+        bundle.putString("description", exercise.description)
+        bundle.putString("image",exercise.image)
+        // Transfering to the second fragment
+        val fragment = MuscleDetailsFragment()
+        fragment.arguments = bundle
+        fragmentManager?.beginTransaction()?.replace(R.id.nav_graph,fragment)?.commit()
+
     }
 }
 

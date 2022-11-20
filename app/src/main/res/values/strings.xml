@@ -7,6 +7,7 @@
     <string name="muscle_group">Muscle Group</string>
     <string name="exercise">Exercise</string>
     <string name="guion">-</string>
+
     <!-- Log in Text-->
     <string name="login">Iniciar sesión</string>
     <string name="password">Contraseña</string>
@@ -20,4 +21,8 @@
     <string name="el_primer_paso_para_una_vida_saludable">¡El primer paso para una vida saludable!</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="cerrar_sesion">Cerrar Sesion</string>
+
+    <!-- Muscle Details-->
+    <string name="muscle_name">MUSCLE NAME</string>
+    <string name="exercise_details">DESCRIPTION</string>
 </resources>

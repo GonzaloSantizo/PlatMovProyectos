@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_muscleDetailsFragment_to_muscleListFragment"
             app:destination="@id/muscleListFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
