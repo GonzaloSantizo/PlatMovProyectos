@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph"
         tools:layout="@layout/fragment_log_in" />
-
+    <!--
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavi_bottomNavActivity"
         android:layout_width="match_parent"
@@ -37,5 +37,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation"
         style="@style/BottomNavigation"/>
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

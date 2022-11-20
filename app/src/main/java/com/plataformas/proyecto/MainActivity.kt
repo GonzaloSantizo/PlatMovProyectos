@@ -19,27 +19,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bottomNav = findViewById(R.id.bottomNavi_bottomNavActivity)
-        setCurrentFragment(HomeFragment())
-        setListeners()
+        //bottomNav = findViewById(R.id.bottomNavi_bottomNavActivity)
+        //setCurrentFragment(HomeFragment())
+        //setListeners()
     }
 
-    private fun setListeners(){
-        bottomNav.setOnItemSelectedListener {
-            // Dependiendo el item del menu, mostramos el fragment deseado
-            when(it.itemId) {
-                R.id.home_fragment -> setCurrentFragment(HomeFragment())
-                R.id.exercises_register -> setCurrentFragment(ExercisesFragment())
-            }
-            true
-        }
-    }
-
-    private fun setCurrentFragment(fragment: Fragment){
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            //addToBackStack(null)
-            replace(R.id.fragmentContainer, fragment)
-        }
-    }
+//    private fun setListeners(){
+//        bottomNav.setOnItemSelectedListener {
+//            // Dependiendo el item del menu, mostramos el fragment deseado
+//            when(it.itemId) {
+//                R.id.home_fragment -> setCurrentFragment(HomeFragment())
+//                R.id.exercises_register -> setCurrentFragment(ExercisesFragment())
+//            }
+//            true
+//        }
+//    }
+//
+//    private fun setCurrentFragment(fragment: Fragment){
+//        supportFragmentManager.commit {
+//            setReorderingAllowed(true)
+//            //addToBackStack(null)
+//            replace(R.id.fragmentContainer, fragment)
+//        }
+//    }
 }

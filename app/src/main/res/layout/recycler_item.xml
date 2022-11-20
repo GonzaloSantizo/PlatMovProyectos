@@ -6,9 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
-    android:focusable="true"
-
-    >
+    android:focusable="true">
 
     <ImageView
         android:id="@+id/recycler_itemImage"
@@ -21,19 +19,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024"
         tools:ignore="ImageContrastCheck"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="TODO" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/item_muscleGroup"
+        android:id="@+id/txtView_Adapter_item_muscleGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/muscle_group"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toEndOf="@+id/recycler_itemImage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintTop_toTopOf="@+id/recycler_itemImage"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_itemImage"/>
+
+    <TextView
+        android:id="@+id/txtView_Adapter_guion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guion"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtView_Adapter_item_muscleGroup"
+        app:layout_constraintStart_toEndOf="@id/txtView_Adapter_item_muscleGroup"
+        app:layout_constraintTop_toTopOf="@id/txtView_Adapter_item_muscleGroup" />
+
+    <TextView
+        android:id="@+id/txtView_Adapter_exercise_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exercise"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/txtView_Adapter_guion"
+        app:layout_constraintStart_toEndOf="@+id/txtView_Adapter_guion"
+        app:layout_constraintTop_toTopOf="@id/txtView_Adapter_guion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

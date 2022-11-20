@@ -5,6 +5,8 @@
     <string name="iniciar_sesi_n">Iniciar Sesión</string>
     <string name="btnback">btn_back</string>
     <string name="muscle_group">Muscle Group</string>
+    <string name="exercise">Exercise</string>
+    <string name="guion">-</string>
     <!-- Log in Text-->
     <string name="login">Iniciar sesión</string>
     <string name="password">Contraseña</string>
