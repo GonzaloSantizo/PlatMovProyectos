@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,6 +15,8 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
@@ -38,7 +41,7 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
     private lateinit var exercisesArrayList : ArrayList<ExercisesDto>
     private lateinit var description : TextView
     private lateinit var auth : FirebaseAuth
-    private val viewModel : itemViewModel by viewModels()
+    private lateinit var bottomNav : BottomNavigationView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -48,8 +51,8 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         recyclerMuscles = view.findViewById(R.id.recycler_muscles)
         auth= Firebase.auth
         exercisesArrayList = arrayListOf()
-        viewModel.bottomNav = view.findViewById(R.id.bottomNavi_bottomNavFragment)
-        viewModel.bottomNav.visibility = View.VISIBLE
+        bottomNav = view.findViewById(R.id.bottomNavi_bottomNavFragment)
+        bottomNav.visibility = View.VISIBLE
         setToolBar()
 
         setListeners()
@@ -84,7 +87,6 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         recyclerMuscles.layoutManager = LinearLayoutManager(requireContext())
         recyclerMuscles.setHasFixedSize(true)
         recyclerMuscles.adapter = adapter
-
     }
 
 
@@ -95,6 +97,9 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
     }
 
     private fun setListeners() {
+        val navController = findNavController()
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.muscleListFragment,R.id.exercisesFragment))
+        bottomNav.setupWithNavController(navController)
         toolbar.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId) {
                 R.id.menu_item_darkMode -> {
@@ -108,6 +113,20 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
                 else -> true
             }
         }
+        bottomNav.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.home_fragment -> {
+                    requireView().findNavController().navigate(MuscleListFragmentDirections.actionMuscleListFragmentSelf())
+                    true
+                }
+                R.id.exercises_register -> {
+                    requireView().findNavController().navigate(MuscleListFragmentDirections.actionMuscleListFragmentToExercisesFragment())
+                    true
+                }
+            }
+            true
+        }
+
     }
 
     private fun logout() {

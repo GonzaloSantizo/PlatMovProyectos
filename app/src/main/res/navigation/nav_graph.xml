@@ -32,6 +32,12 @@
             app:destination="@id/logInFragment"
             app:popUpTo="@id/muscleListFragment"
             app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_muscleListFragment_to_exercisesFragment"
+            app:destination="@id/exercisesFragment" />
+        <action
+            android:id="@+id/action_muscleListFragment_self"
+            app:destination="@id/muscleListFragment" />
     </fragment>
     <fragment
         android:id="@+id/muscleDetailsFragment"
@@ -53,4 +59,25 @@
             android:id="@+id/action_registerFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/exercisesFragment"
+        android:name="com.plataformas.proyecto.ui.fragments.ExercisesFragment"
+        android:label="Exercises Register" >
+        <action
+            android:id="@+id/action_exercisesFragment_to_muscleListFragment"
+            app:destination="@id/muscleListFragment"
+            app:popUpTo="@id/exercisesFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_exercisesFragment_self"
+            app:destination="@id/exercisesFragment" />
+        <action
+            android:id="@+id/action_exercisesFragment_to_addingRegisterragment"
+            app:destination="@id/addingRegisterragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addingRegisterragment"
+        android:name="com.plataformas.proyecto.ui.fragments.AddingRegisterragment"
+        android:label="fragment_adding_register_fragment"
+        tools:layout="@layout/fragment_adding_register_fragment" />
 </navigation>

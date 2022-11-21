@@ -21,32 +21,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        viewModel.bottomNav = findViewById(R.id.bottomNavi_bottomNavActivity)
-
-        viewModel.bottomNav.visibility = View.GONE
-
-        //setCurrentFragment(HomeFragment())
-        setListeners()
     }
 
-    private fun setListeners(){
-        viewModel.bottomNav.setOnItemSelectedListener {
-            // Dependiendo el item del menu, mostramos el fragment deseado
-            when(it.itemId) {
-                R.id.home_fragment -> setCurrentFragment(MuscleListFragment())
-                R.id.exercises_register -> setCurrentFragment(ExercisesFragment())
-            }
-            true
-        }
-
-    }
-
-    private fun setCurrentFragment(fragment: Fragment){
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            //addToBackStack(null)
-            replace(R.id.fragmentContainer, fragment)
-        }
-    }
 }

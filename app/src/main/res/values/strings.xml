@@ -25,4 +25,13 @@
     <!-- Muscle Details-->
     <string name="muscle_name">MUSCLE NAME</string>
     <string name="exercise_details">DESCRIPTION</string>
+
+    <!-- Exercise register Text-->
+    <string name="deleteCard">Desliza hacia la derecha para eliminar</string>
+    <string name="addRegister">Agregar</string>
+    <string name="newRegister">Nuevo Registro</string>
+    <string name="descriptionExercise">Descripción</string>
+    <string name="exerciseName">Ingrese el nombre del ejercicio</string>
+    <string name="amountWeight">Ingrese la cantidad de peso levantado</string>
+    <string name="saveRegister">Guardar Registro</string>
 </resources>
