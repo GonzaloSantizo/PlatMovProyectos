@@ -32,7 +32,7 @@ import com.plataformas.proyecto.ui.adapters.MuscleAdapter
 
 class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
 
-    private val args: MuscleDetailsFragmentArgs by navArgs()
+
     private lateinit var txtName : TextView
     private lateinit var txtMuscle : TextView
     private lateinit var txtDescription : TextView
@@ -42,6 +42,7 @@ class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
     private lateinit var toolBar:MaterialToolbar
     private lateinit var exercisesDto: ExercisesDto
     private lateinit var exerciseList : ArrayList<ExercisesDto>
+    private  val args: MuscleDetailsFragmentArgs by navArgs()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,6 +53,10 @@ class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
         txtDescription = view.findViewById(R.id.decription_details)
         imgExercise = view.findViewById(R.id.imageDetails)
         db = FirebaseFirestore.getInstance()
+        txtMuscle.text = args.muscle.toString()
+        txtName.text = args.exercises.toString()
+        txtDescription.text = args.description.toString()
+        imgExercise.load(args.image)
 
 
         setToolbar()

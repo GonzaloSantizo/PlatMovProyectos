@@ -124,7 +124,7 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         db = FirebaseFirestore.getInstance()
 
         val action = MuscleListFragmentDirections.actionMuscleListFragmentToMuscleDetailsFragment(
-            exercise.name.toString()
+            exercise.name.toString(), exercise.muscle.toString(), exercise.description.toString(), exercise.image.toString()
         )
         requireView().findNavController().navigate(action)
     }
