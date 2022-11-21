@@ -12,8 +12,23 @@ import kotlinx.coroutines.launch
 
 class RegisterViewModel(application : Application) : AndroidViewModel(application) {
 
+    
+    /**
+    * 
+    * variables to read data from user
+    * 
+    */
+    
     private val readAllData : LiveData<List<RegisterData>>
     private val repository : RegisterRepository
+    
+    /**
+    * 
+    * Initialice register
+    * 
+    */
+    
+    
     init{
         val registerDao = RegisterDB.getDataBase(application).registerDao()
         repository = RegisterRepository(registerDao)
