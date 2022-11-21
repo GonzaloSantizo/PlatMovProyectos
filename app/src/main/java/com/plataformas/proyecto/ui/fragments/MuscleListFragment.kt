@@ -41,11 +41,11 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
     private lateinit var exercisesArrayList : ArrayList<ExercisesDto>
     private lateinit var description : TextView
     private lateinit var auth : FirebaseAuth
-<<<<<<< HEAD
+
     private lateinit var bottomNav : BottomNavigationView
-=======
+
     //private val viewModel : itemViewModel by viewModels()
->>>>>>> 9896279d2b032e0aace99bb60b4bff335a96ba5f
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -55,13 +55,13 @@ class MuscleListFragment : Fragment(R.layout.fragment_muscle_list), MuscleAdapte
         recyclerMuscles = view.findViewById(R.id.recycler_muscles)
         auth= Firebase.auth
         exercisesArrayList = arrayListOf()
-<<<<<<< HEAD
+
         bottomNav = view.findViewById(R.id.bottomNavi_bottomNavFragment)
         bottomNav.visibility = View.VISIBLE
-=======
+
        // viewModel.bottomNav = view.findViewById(R.id.bottomNavi_bottomNavFragment)
       //  viewModel.bottomNav.visibility = View.VISIBLE
->>>>>>> 9896279d2b032e0aace99bb60b4bff335a96ba5f
+
         setToolBar()
 
         setListeners()
