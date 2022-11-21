@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.NonNull
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -19,15 +20,19 @@ import coil.load
 import coil.request.CachePolicy
 import coil.transform.CircleCropTransformation
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.FirebaseDatabase.*
 import com.google.firebase.firestore.*
 import com.plataformas.proyecto.R
 import com.plataformas.proyecto.data.remote.firestore.ExercisesDto
 import com.google.firebase.firestore.FirebaseFirestore
+import com.plataformas.proyecto.data.ExercisesDB
 import com.plataformas.proyecto.ui.adapters.MuscleAdapter
 
 class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
 
-    private val args: MuscleDetailsFragmentArgs by navArgs()
+
     private lateinit var txtName : TextView
     private lateinit var txtMuscle : TextView
     private lateinit var txtDescription : TextView
@@ -35,6 +40,10 @@ class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
     private lateinit var db: FirebaseFirestore
     private lateinit var btnBack: Button
     private lateinit var toolBar:MaterialToolbar
+    private lateinit var exercisesDto: ExercisesDto
+    private lateinit var exerciseList : ArrayList<ExercisesDto>
+    private  val args: MuscleDetailsFragmentArgs by navArgs()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,10 +52,16 @@ class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
         txtName = view.findViewById(R.id.txtView_muscleDetails_exercise)
         txtDescription = view.findViewById(R.id.decription_details)
         imgExercise = view.findViewById(R.id.imageDetails)
+        db = FirebaseFirestore.getInstance()
+        txtMuscle.text = args.muscle.toString()
+        txtName.text = args.exercises.toString()
+        txtDescription.text = args.description.toString()
+        imgExercise.load(args.image)
 
 
         setToolbar()
-        getCharacter()
+
+
     }
 
     private fun setToolbar() {
@@ -55,21 +70,4 @@ class MuscleDetailsFragment : Fragment(R.layout.fragment_muscle_details) {
         toolBar.setupWithNavController(navController, appbarConfig)
     }
 
-    private fun getCharacter() {
-        db = FirebaseFirestore.getInstance()
-        db.collection("dbmuscles").document(
-                args.name).get().addOnSuccessListener {
-            if (it.exists()) {
-                txtMuscle.text = it.data?.get("muscle").toString()
-                txtDescription.text = it.data?.get("description").toString()
-                txtName.text = it.data?.get("name").toString()
-                imgExercise.load(it.data?.get("image")){
-                    transformations(CircleCropTransformation())
-                    memoryCachePolicy(CachePolicy.DISABLED)
-                }
-            } else {
-
-            }
-        }
-    }
 }

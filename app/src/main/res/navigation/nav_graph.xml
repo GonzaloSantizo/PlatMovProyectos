@@ -48,8 +48,15 @@
             android:id="@+id/action_muscleDetailsFragment_to_muscleListFragment"
             app:destination="@id/muscleListFragment" />
         <argument
-            android:name="name"
+            android:name="exercises"
             app:argType="string"/>
+        <argument
+            android:name="muscle"
+            app:argType="string" />
+        <argument android:name="description" />
+        <argument
+            android:name="image"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"

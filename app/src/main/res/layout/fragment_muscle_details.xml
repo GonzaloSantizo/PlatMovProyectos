@@ -18,11 +18,14 @@
 
     <ImageView
         android:id="@+id/imageDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="327dp"
+        android:layout_height="336dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_muscleDetails"
+        app:layout_constraintVertical_bias="0.188"
         tools:src="@tools:sample/avatars" />
 
     <TextView
@@ -59,7 +62,6 @@
         app:layout_constraintTop_toBottomOf="@id/txtView_muscleDetails_muscleName"
 
         />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
