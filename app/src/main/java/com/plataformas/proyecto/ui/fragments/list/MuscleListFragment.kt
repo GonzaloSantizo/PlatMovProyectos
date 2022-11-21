@@ -1,13 +1,10 @@
-package com.plataformas.proyecto.ui.fragments
+package com.plataformas.proyecto.ui.fragments.list
 
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.TextView
-import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,7 +12,6 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
@@ -28,7 +24,6 @@ import com.google.firebase.ktx.Firebase
 import com.plataformas.proyecto.R
 import com.plataformas.proyecto.data.remote.firestore.ExercisesDto
 import com.plataformas.proyecto.ui.adapters.MuscleAdapter
-import com.plataformas.proyecto.ui.viewmodel.itemViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

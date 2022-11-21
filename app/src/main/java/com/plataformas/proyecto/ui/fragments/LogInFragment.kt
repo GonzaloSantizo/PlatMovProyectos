@@ -34,7 +34,6 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
             textViewRegistro = findViewById(R.id.textViewRegistro)
             inputEmail = findViewById(R.id.inputEmail_layout)
             inputPassword= findViewById(R.id.inputPassword_layout)
-
         }
         setListeners()
     }

@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/muscleListFragment"
-        android:name="com.plataformas.proyecto.ui.fragments.MuscleListFragment"
+        android:name="com.plataformas.proyecto.ui.fragments.list.MuscleListFragment"
         android:label="Grupos musculares"
         tools:layout="@layout/fragment_muscle_list" >
         <action
@@ -68,7 +68,7 @@
     </fragment>
     <fragment
         android:id="@+id/exercisesFragment"
-        android:name="com.plataformas.proyecto.ui.fragments.ExercisesFragment"
+        android:name="com.plataformas.proyecto.ui.fragments.list.ExercisesFragment"
         android:label="Exercises Register" >
         <action
             android:id="@+id/action_exercisesFragment_to_muscleListFragment"
@@ -86,5 +86,9 @@
         android:id="@+id/addingRegisterragment"
         android:name="com.plataformas.proyecto.ui.fragments.AddingRegisterragment"
         android:label="fragment_adding_register_fragment"
-        tools:layout="@layout/fragment_adding_register_fragment" />
+        tools:layout="@layout/fragment_adding_register_fragment" >
+        <action
+            android:id="@+id/action_addingRegisterragment_to_exercisesFragment"
+            app:destination="@id/exercisesFragment" />
+    </fragment>
 </navigation>

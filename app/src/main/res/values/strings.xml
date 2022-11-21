@@ -34,4 +34,9 @@
     <string name="exerciseName">Ingrese el nombre del ejercicio</string>
     <string name="amountWeight">Ingrese la cantidad de peso levantado</string>
     <string name="saveRegister">Guardar Registro</string>
+    <string name="index">1</string>
+    <string name="nameExercise">EXERCISE: </string>
+    <string name="weight">WEIGHT: </string>
+    <string name="description">DESCRIPTION</string>
+
 </resources>

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ui.fragments.ExercisesFragment">
+    tools:context=".ui.fragments.list.ExercisesFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar_exerciseRegisterFragment"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_exerciseRegisterFragment"
-        tools:listitem="@layout/recycler_item" />
+        tools:listitem="@layout/recycler_register" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_exerciseRegisterFragment_addNewRegister"
