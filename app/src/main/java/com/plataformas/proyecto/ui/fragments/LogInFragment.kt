@@ -1,11 +1,9 @@
 package com.plataformas.proyecto.ui.fragments
-import android.content.Intent
+
+
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -14,7 +12,6 @@ import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.plataformas.proyecto.R
 import com.plataformas.proyecto.data.repository.auth.AuthRepository
-import com.plataformas.proyecto.ui.fragments.LogInFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -25,7 +22,6 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
     private lateinit var textViewRegistro : TextView
     private lateinit var inputEmail: TextInputLayout
     private lateinit var inputPassword : TextInputLayout
-
 
     @Inject
     lateinit var authRepository: AuthRepository
