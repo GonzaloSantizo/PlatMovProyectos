@@ -12,7 +12,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e03af9fb-a3ad-4a3c-942c-21251e614be2" name="Changes" comment="cambios en muscle list fragment">
+    <list default="true" id="e03af9fb-a3ad-4a3c-942c-21251e614be2" name="Changes" comment="cambios en muscle list fragment" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/data/dao/RegisterDao.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/data/database/RegisterApp.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/plataformas/proyecto/data/database/RegisterDB.kt" afterDir="false" />
@@ -117,8 +117,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="ProyectoPlataformas.app.main" />
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="ProyectoPlataformas.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
