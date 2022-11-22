@@ -1,9 +1,11 @@
 package com.plataformas.proyecto.ui.fragments.list
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ListAdapter
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -18,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.plataformas.proyecto.R
 import com.plataformas.proyecto.ui.adapters.RegisterAdapter
+import com.plataformas.proyecto.ui.fragments.update.UpdateFragmentDirections
 import com.plataformas.proyecto.ui.viewmodel.RegisterViewModel
 
 
@@ -64,8 +67,6 @@ class ExercisesFragment : Fragment(R.layout.fragment_exercises) {
 
     }
 
-
-
     private fun setToolBar(){
         val navController = findNavController()
         val appbarConfig = AppBarConfiguration(setOf(R.id.exercisesFragment))
@@ -83,6 +84,10 @@ class ExercisesFragment : Fragment(R.layout.fragment_exercises) {
                 }
 
                 R.id.menu_item_logout -> {
+                    true
+                }
+                R.id.menu_item_delete ->{
+                    delelteAllRegisters()
                     true
                 }
                 else -> true
@@ -108,5 +113,16 @@ class ExercisesFragment : Fragment(R.layout.fragment_exercises) {
         }
     }
 
-
+    private fun delelteAllRegisters(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Si"){ _,_->
+            mRegisterViewModel.deleteAllRegisters()
+            Toast.makeText(requireContext(), "Se elimino todo exitosamente",
+                Toast.LENGTH_LONG).show()
+        }
+        builder.setNegativeButton("No"){ _,_,->}
+        builder.setTitle("¿Eliminar todo?")
+        builder.setMessage("¿Esta seguro que desea eliminar todo?")
+        builder.create().show()
+    }
 }

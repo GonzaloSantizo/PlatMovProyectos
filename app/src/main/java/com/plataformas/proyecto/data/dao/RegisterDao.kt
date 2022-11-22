@@ -11,12 +11,14 @@ interface RegisterDao {
     fun readAllData():LiveData<List<RegisterData>>
 
     @Update
-    fun update(register: RegisterData)
+    suspend fun updateRegister (register: RegisterData)
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addRegister(register:RegisterData)
-    //fun insert(register: List<RegisterData>)
 
     @Delete
-    fun delete(register: RegisterData)
+    suspend fun deleteRegister(register: RegisterData)
+
+    @Query("DELETE FROM exerciseRegister_table")
+    suspend fun deleteAllRegisters()
 }

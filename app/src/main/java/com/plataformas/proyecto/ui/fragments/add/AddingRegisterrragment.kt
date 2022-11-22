@@ -1,4 +1,4 @@
-package com.plataformas.proyecto.ui.fragments
+package com.plataformas.proyecto.ui.fragments.add
 
 import android.os.Bundle
 import android.text.Editable
@@ -10,17 +10,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.google.android.material.textfield.TextInputEditText
 import com.plataformas.proyecto.R
 import com.plataformas.proyecto.data.model.RegisterData
 import com.plataformas.proyecto.ui.viewmodel.RegisterViewModel
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AddingRegisterragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AddingRegisterragment : Fragment(R.layout.fragment_adding_register_fragment) {
     // TODO: Rename and change types of parameters
     private lateinit var mRegisterViewModel : RegisterViewModel

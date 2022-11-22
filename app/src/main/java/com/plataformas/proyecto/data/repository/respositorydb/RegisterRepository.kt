@@ -9,7 +9,25 @@ class RegisterRepository(
 ) {
     val readAllData : LiveData<List<RegisterData>> = registerDao.readAllData()
 
+    /**
+     * Add a new register to the local db. This call the DAO, that is the data base
+     */
     suspend fun addRegister(newRegister : RegisterData){
         registerDao.addRegister(newRegister)
+    }
+
+    /**
+     * Update a register to local db. This call the DAO, that is the data base
+     */
+    suspend fun updateRegister(register : RegisterData){
+        registerDao.updateRegister(register)
+    }
+
+    suspend fun deleteRegister(register : RegisterData){
+        registerDao.deleteRegister(register)
+    }
+
+    suspend fun deleteAllRegisters(){
+        registerDao.deleteAllRegisters()
     }
 }

@@ -39,7 +39,7 @@
     <string name="newRegister">Nuevo Registro</string>
     <string name="descriptionExercise">Descripción</string>
     <string name="exerciseName">Ingrese el nombre del ejercicio</string>
-    <string name="amountWeight">Ingrese la cantidad de peso levantado</string>
+    <string name="amountWeight">Ingrese la cantidad de peso levantado en libras</string>
     <string name="saveRegister">Guardar Registro</string>
     <string name="index">1</string>
     <string name="nameExercise">EXERCISE: </string>
@@ -49,6 +49,9 @@
     <!-- Exercise update register Text-->
     <string name="updateData">Actualizar información</string>
     <string name="updateRegister">Guardar Registro</string>
+
+    <!-- Delete menu Text-->
+    <string name="delete">Delete</string>
 
 </resources>
 

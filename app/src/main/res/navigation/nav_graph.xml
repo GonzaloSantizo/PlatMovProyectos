@@ -87,7 +87,7 @@
     </fragment>
     <fragment
         android:id="@+id/addingRegisterragment"
-        android:name="com.plataformas.proyecto.ui.fragments.AddingRegisterragment"
+        android:name="com.plataformas.proyecto.ui.fragments.add.AddingRegisterragment"
         android:label="New Register"
         tools:layout="@layout/fragment_adding_register_fragment" >
         <action

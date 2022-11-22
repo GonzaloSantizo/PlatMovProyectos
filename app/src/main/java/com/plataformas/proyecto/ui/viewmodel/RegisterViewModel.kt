@@ -32,4 +32,22 @@ class RegisterViewModel(application : Application) : AndroidViewModel(applicatio
             repository.addRegister(register)
         }
     }
+
+    fun updateRegister(register : RegisterData){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.updateRegister(register)
+        }
+    }
+
+    fun deleteRegister(register : RegisterData){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteRegister(register)
+        }
+    }
+
+    fun deleteAllRegisters(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteAllRegisters()
+        }
+    }
 }
