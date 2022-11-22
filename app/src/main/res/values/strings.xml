@@ -49,6 +49,11 @@
     <!-- Exercise update register Text-->
     <string name="updateData">Actualizar información</string>
     <string name="updateRegister">Guardar Registro</string>
+    <string name="el_cambio_empieza_ahora">¡El cambio empieza ahora!</string>
+    <string name="bienvenido">¡Bienvenido!</string>
+    <string name="nombre_de_ejercicio">Nombre de ejercicio</string>
+    <string name="m_sculo_trabajado">Músculo trabajado</string>
+    <string name="exerciseimage">exerciseImage</string>
 
 </resources>
 
