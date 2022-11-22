@@ -12,18 +12,16 @@ import kotlinx.coroutines.launch
 
 class RegisterViewModel(application : Application) : AndroidViewModel(application) {
 
-<<<<<<< HEAD
+
     val readAllData : LiveData<List<RegisterData>>
-=======
+
     
     /**
     * 
     * variables to read data from user
     * 
     */
-    
-    private val readAllData : LiveData<List<RegisterData>>
->>>>>>> 2ebe0fb48bd17f03a886f58d2ec8b4289403f498
+
     private val repository : RegisterRepository
     
     /**

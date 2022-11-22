@@ -41,10 +41,8 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             inputPasswordRegister = findViewById(R.id.passwordRegister)
 
         }
-
         setListeners()
     }
-
 
 
     private fun setListeners() {
@@ -61,8 +59,6 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                         "User Created",
                         Toast.LENGTH_LONG).show()
                     requireView().findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLogInFragment())
-
-
                 }
                 else {
                     Toast.makeText(context,
@@ -72,12 +68,5 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 }
             }
         }
-
-
-
     }
-
-
-
-
 }
