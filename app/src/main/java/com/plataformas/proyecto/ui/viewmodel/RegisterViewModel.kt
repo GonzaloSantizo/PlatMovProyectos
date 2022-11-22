@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class RegisterViewModel(application : Application) : AndroidViewModel(application) {
 
-    private val readAllData : LiveData<List<RegisterData>>
+    val readAllData : LiveData<List<RegisterData>>
     private val repository : RegisterRepository
     init{
         val registerDao = RegisterDB.getDataBase(application).registerDao()

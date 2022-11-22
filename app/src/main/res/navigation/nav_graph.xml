@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/logInFragment"
         android:name="com.plataformas.proyecto.ui.fragments.LogInFragment"
-        android:label="fragment_log_in"
+        android:label="Log In"
         tools:layout="@layout/fragment_log_in" >
         <action
             android:id="@+id/action_logInFragment_to_muscleListFragment"
@@ -61,7 +61,7 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.plataformas.proyecto.ui.fragments.RegisterFragment"
-        android:label="RegisterFragment" >
+        android:label="Crear cuenta" >
         <action
             android:id="@+id/action_registerFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
@@ -81,14 +81,29 @@
         <action
             android:id="@+id/action_exercisesFragment_to_addingRegisterragment"
             app:destination="@id/addingRegisterragment" />
+        <action
+            android:id="@+id/action_exercisesFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
     </fragment>
     <fragment
         android:id="@+id/addingRegisterragment"
         android:name="com.plataformas.proyecto.ui.fragments.AddingRegisterragment"
-        android:label="fragment_adding_register_fragment"
+        android:label="New Register"
         tools:layout="@layout/fragment_adding_register_fragment" >
         <action
             android:id="@+id/action_addingRegisterragment_to_exercisesFragment"
             app:destination="@id/exercisesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.plataformas.proyecto.ui.fragments.update.UpdateFragment"
+        android:label="Update info"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_exercisesFragment"
+            app:destination="@id/exercisesFragment" />
+        <argument
+            android:name="currentRegister"
+            app:argType="com.plataformas.proyecto.data.model.RegisterData" />
     </fragment>
 </navigation>

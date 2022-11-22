@@ -21,7 +21,7 @@ class MuscleAdapter(
 
 
     inner class ViewHolder(view: View, private val listener: RecyclerViewExerciseEvents): RecyclerView.ViewHolder(view){
-        private val layoutExercise : ConstraintLayout = view.findViewById(R.id.constraint_item)
+        val layoutExercise : ConstraintLayout = view.findViewById(R.id.constraint_item)
         var muscle : TextView = view.findViewById(R.id.txtView_Adapter_item_muscleGroup)
         var exercises: TextView = view.findViewById(R.id.txtView_Adapter_exercise_name)
         var image : ImageView = view.findViewById(R.id.recycler_itemImage)

@@ -39,4 +39,8 @@
     <string name="weight">WEIGHT: </string>
     <string name="description">DESCRIPTION</string>
 
+    <!-- Exercise update register Text-->
+    <string name="updateData">Actualizar información</string>
+    <string name="updateRegister">Guardar Registro</string>
+
 </resources>
