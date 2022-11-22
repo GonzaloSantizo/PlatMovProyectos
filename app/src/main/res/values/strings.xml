@@ -1,11 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-    /**
-    * 
-    * String files for the project
-    * 
-    */
-    
     <string name="app_name">ProyectoPlataformas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -16,12 +10,7 @@
     <string name="guion">-</string>
 
     <!-- Log in Text-->
-    /**
-    * 
-    * log in strings
-    * 
-    */
-    
+
     <string name="login">Iniciar sesión</string>
     <string name="password">Contraseña</string>
     <string name="email">Correo</string>
@@ -39,23 +28,12 @@
     
     <!-- Muscle Details-->
     
-    /**
-    * 
-    * These variables will display the NAME of the muscle and the exercise
-    * 
-    */
-    
     
     <string name="muscle_name">MUSCLE NAME</string>
     <string name="exercise_details">DESCRIPTION</string>
 
     <!-- Exercise register Text-->
-    
-    /**
-    * 
-    * These will be displayed while adding a new exercise
-    * 
-    */
+
     <string name="deleteCard">Desliza hacia la derecha para eliminar</string>
     <string name="addRegister">Agregar</string>
     <string name="newRegister">Nuevo Registro</string>
@@ -68,12 +46,9 @@
     <string name="weight">WEIGHT: </string>
     <string name="description">DESCRIPTION</string>
 
-<<<<<<< HEAD
     <!-- Exercise update register Text-->
     <string name="updateData">Actualizar información</string>
     <string name="updateRegister">Guardar Registro</string>
 
 </resources>
-=======
-</resources>
->>>>>>> 2ebe0fb48bd17f03a886f58d2ec8b4289403f498
+
