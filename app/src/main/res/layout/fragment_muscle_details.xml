@@ -11,57 +11,117 @@
         android:id="@+id/toolbar_muscleDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtView_muscleDetails_muscleName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu"
-        />
+        app:layout_constraintVertical_bias="0.0"
+        app:menu="@menu/menu" />
 
     <ImageView
         android:id="@+id/imageDetails"
-        android:layout_width="327dp"
-        android:layout_height="336dp"
+        android:layout_width="362dp"
+        android:layout_height="263dp"
+        android:contentDescription="@string/exerciseimage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_muscleDetails"
-        app:layout_constraintVertical_bias="0.188"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364"
+        tools:ignore="ImageContrastCheck"
         tools:src="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/txtView_muscleDetails_muscleName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/muscle_name"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toStartOf="@id/txtView_muscleDetails_exercise"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageDetails"/>
 
     <TextView
         android:id="@+id/txtView_muscleDetails_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/exercise"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@id/txtView_muscleDetails_muscleName"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="1"
+        android:text="@string/exercise"
+        android:textAlignment="center"
+        android:textColor="#151414"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageDetails"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintVertical_bias="0.235" />
+
+    <TextView
+        android:id="@+id/txtView_muscleDetails_muscleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="1"
+        android:text="@string/muscle_name"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#131313"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142" />
 
     <TextView
         android:id="@+id/decription_details"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="1"
         android:text="@string/exercise_details"
-        android:textSize="16sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtView_muscleDetails_muscleName"
 
+        android:textAlignment="center"
+        android:textColor="#201E1E"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageDetails"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre_de_ejercicio"
+        android:textAlignment="center"
+        android:textColor="#151515"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtView_muscleDetails_exercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="1"
         />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fadingEdge="horizontal"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="1"
+        android:text="@string/m_sculo_trabajado"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#222020"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtView_muscleDetails_muscleName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_muscleDetails" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

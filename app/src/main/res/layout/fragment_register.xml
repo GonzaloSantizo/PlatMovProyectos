@@ -60,10 +60,16 @@
             android:shadowDy="-2"
             android:shadowRadius="1"
             android:textColorHint="#F1EAEA"
+            app:boxStrokeColor="@color/white"
+            app:counterTextColor="@color/white"
+            app:endIconTint="@color/white"
+            app:helperTextTextColor="@color/white"
+            app:hintTextColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/passwordRegister"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtView_Message">
+            app:layout_constraintTop_toBottomOf="@+id/txtView_Message"
+            app:passwordToggleTint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -88,15 +94,23 @@
             android:shadowDy="-2"
             android:shadowRadius="1"
             android:textColorHint="#F3EEEE"
+            app:boxStrokeColor="@color/white"
+            app:counterTextColor="@color/white"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/white"
+            app:helperTextTextColor="@color/white"
+            app:hintTextColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/btnRegistrarse"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailRegister"
             app:layout_constraintVertical_bias="0.305"
             app:passwordToggleEnabled="true"
-            app:endIconMode="password_toggle"
-            app:endIconTint="@color/white"
-            >
+            app:passwordToggleTint="@color/white"
+            app:placeholderTextColor="@color/white"
+            app:prefixTextColor="@color/white"
+            app:startIconTint="@color/white"
+            app:suffixTextColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -118,7 +132,7 @@
         android:shadowDx="-2"
         android:shadowDy="-2"
         android:shadowRadius="1"
-        android:text="Registrate ahora"
+        android:text="@string/registrate_ahora"
         android:textColor="#E8DFDF"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -24,11 +24,7 @@ import com.plataformas.proyecto.ui.fragments.update.UpdateFragmentDirections
 import com.plataformas.proyecto.ui.viewmodel.RegisterViewModel
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ExercisesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class ExercisesFragment : Fragment(R.layout.fragment_exercises) {
     private lateinit var toolbar: MaterialToolbar
     private lateinit var recyclerExercises: RecyclerView
