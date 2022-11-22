@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/logInFragment">
+    app:startDestination="@id/logInFragment"> // sets start destination
 
     <fragment
         android:id="@+id/logInFragment"
@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_log_in" >
         <action
             android:id="@+id/action_logInFragment_to_muscleListFragment"
-            app:destination="@id/muscleListFragment"
-            app:popUpTo="@id/logInFragment"
+            app:destination="@id/muscleListFragment" // shows destination
+            app:popUpTo="@id/logInFragment" 
             app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_logInFragment_to_registerFragment"
@@ -94,6 +94,7 @@
             android:id="@+id/action_addingRegisterragment_to_exercisesFragment"
             app:destination="@id/exercisesFragment" />
     </fragment>
+<<<<<<< HEAD
     <fragment
         android:id="@+id/updateFragment"
         android:name="com.plataformas.proyecto.ui.fragments.update.UpdateFragment"
@@ -107,3 +108,6 @@
             app:argType="com.plataformas.proyecto.data.model.RegisterData" />
     </fragment>
 </navigation>
+=======
+</navigation>
+>>>>>>> 2ebe0fb48bd17f03a886f58d2ec8b4289403f498

@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.list.ExercisesFragment">
 
+    
+    /**
+    * 
+    * this section contains the excercises and displays them to the user
+    * 
+    */
+    
+    
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar_exerciseRegisterFragment"
         android:layout_width="match_parent"
