@@ -69,7 +69,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtView_Message"
-            app:passwordToggleTint="@color/white">
+            app:passwordToggleTint="@color/white"
+            app:placeholderTextColor="@color/white"
+            app:prefixTextColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -78,6 +80,7 @@
                 android:shadowDx="-2"
                 android:shadowDy="-2"
                 android:shadowRadius="1"
+                android:textColor="@color/white"
                 android:textColorHint="#616161"
                 tools:ignore="TextContrastCheck,TextContrastCheck" />
         </com.google.android.material.textfield.TextInputLayout>

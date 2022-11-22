@@ -56,13 +56,13 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 if (!userId.isNullOrEmpty()){
                     Toast.makeText(
                         context,
-                        "User Created",
+                        "Usuario creado",
                         Toast.LENGTH_LONG).show()
                     requireView().findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLogInFragment())
                 }
                 else {
                     Toast.makeText(context,
-                        "Usuario o contraseña incorrectos",
+                        "La contraseña debe de tener al menos 6 carácteres",
                         Toast.LENGTH_LONG
                     ).show()
                 }
