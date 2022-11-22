@@ -28,5 +28,5 @@ Repositorio  para el proyecto movil 2022
 
 ### - Jetpack navigation: Se utilizara para la navegacion interna de la aplicacion.
 ### - Retrofit: Se utilizara para generar las llamadas al API de nuestra aplicacion.
-### - firebase: esta libreria se utiliza para validar a los usuarios cuando hhacen log in
+### - firebase: esta libreria se utiliza para validar a los usuarios cuando hacen log in
 
