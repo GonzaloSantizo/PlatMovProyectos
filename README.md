@@ -17,12 +17,9 @@ Repositorio  para el proyecto movil 2022
 # Servicios: 
 
 ### El API que sera utilizada en este proyecto es: 
-### https://www.programmableweb.com/api/makesweat-rest-api-v10
-### https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/details
 ### https://console.firebase.google.com/project/proyectoplatmov/authentication/users
-### Esta API contiene mas de 1300 ejercicios para diferentes musculos en el cuerpo y 
-### sera utilizada para nuestra llamada de internet. Desde la aplicacion
-### podemos pedir informacion al API para mostrarle al usuario el ejercicio que ellos buscan.
+### Esta API sera utilizada para nuestra llamada de internet. Desde la aplicacion
+### podemos pedir informacion al al usuario y validarla con nuestra base de datos.
 
 
 
