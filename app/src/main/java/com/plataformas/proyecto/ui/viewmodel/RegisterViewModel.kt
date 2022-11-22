@@ -16,19 +16,9 @@ class RegisterViewModel(application : Application) : AndroidViewModel(applicatio
     val readAllData : LiveData<List<RegisterData>>
 
     
-    /**
-    * 
-    * variables to read data from user
-    * 
-    */
 
     private val repository : RegisterRepository
     
-    /**
-    * 
-    * Initialice register
-    * 
-    */
     
     
     init{
